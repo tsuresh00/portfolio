@@ -1,0 +1,534 @@
+body {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(180, 187, 190);
+  }
+  
+
+*{
+    box-sizing: border-box;
+ }
+   
+img
+{
+  vertical-align: middle;
+  border: 2px solid black;
+
+}
+ /**** styles for navigation ***/ 
+ 
+  .topnav {
+    overflow: hidden;
+    background-color:rgb(5, 4, 3);
+    padding: 20px;
+  }
+  
+
+  .topnav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 100px;
+    text-decoration: none;
+    font-size: 15px;
+  
+  }
+
+  .topnav a:hover {
+    
+      transform: translateY(-4px);
+      box-shadow: 0 7px 20px rgba(0,0,0, .4);
+      background-image: linear-gradient(black 5%,rgb(180, 187, 190),black);
+      color: black;
+  }
+  
+  .topnav a.active {
+    background-image:linear-gradient(black .5%,seagreen,black);
+   
+    color: white;
+  }
+  .topnav a.active:hover {
+    background-color:white;
+    color:white;
+   
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+
+  /* Resume Button */
+  .btn{
+    background-image:linear-gradient(black 15%,seagreen);
+    color: rgb(180, 187, 190);
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 0.1px solid black;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    font-kerning: normal;
+  }
+  .btn a{
+    text-decoration: none;
+    color: rgb(180, 187, 190);
+  }
+  /*CV*/
+  .resume{
+    margin-top:-10px;
+    color: white;
+    background-color:black;
+    text-align: center;
+   padding: 30px;
+  }
+  
+  .cv{
+    margin-top: 2px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+  }
+  .background-color
+  {
+
+    background-image: linear-gradient(black,seagreen,black);
+  }
+  .background-color-edu
+  {
+    background-color: black;
+    margin-top:0px;
+    border-top: 1px solid rgb(180, 187, 190);
+    border-bottom: 1px solid rgb(180, 187, 190);
+  }
+
+  /*certificatebtn*/
+  .certificatebtn{
+  
+    background-image:linear-gradient(black 15%,seagreen);
+    color: rgb(180, 187, 190);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 600px;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: 0.1px solid black;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+    font-kerning: normal;
+
+  }
+  .certificatebtn a{
+    text-decoration: none;
+    color:rgb(180, 187, 190);
+  }
+  .certificatebtn2 a{
+    text-decoration: none;
+    color:rgb(180, 187, 190);
+  }
+
+
+  @media screen and (max-width: 992px) {
+    .topnav a{display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+
+  .container
+{
+max-width: 100%;
+position: relative;
+margin: auto;
+}
+
+.text {
+  color:black;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 330px;
+  width: 100%;
+  font-size: 25px;
+  font-family:'Times New Roman', Times, serif;
+  animation: slideUp 2s ease-out;
+
+}
+.lef{
+  margin-left: 50px;
+  color:black;
+  
+}
+
+@media screen and (max-width: 992px) {
+  .text {
+    position: relative;
+    font-size: 12px;
+    margin-top:100px;
+  }
+}
+
+
+  /**** container for experience ,education , experiences****/
+  .cards-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr repeat(2, 300px .25fr) 300px 1fr;
+}
+
+ /**** Create 3 image boxes****/
+.card1 {
+    grid-column: 2 / 3;
+}
+
+.card2 {
+    grid-column: 4 / 5;
+}
+
+.card3 {
+    grid-column: 6 / 7;
+}
+
+ /**** Image box styling****/
+.cards {
+  position: relative;
+  height: 20rem;
+  perspective: 150rem;
+  border-top: 10px;
+}
+
+.cards-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: all 0.9s ease;
+  border-radius: 3px;
+  box-shadow: rgba(0,0,0, 0.4);
+}
+
+ /**** Animation property for education****/
+.overlay {
+  position: absolute;
+  top: 15px;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  height: 66%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+  animation: fade-image;
+}
+
+.tex {
+
+  color:rgb(180, 187, 190);
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.card1:hover .overlay{
+  opacity: 1;
+
+}
+.card2:hover .overlay{
+  opacity: 1;
+}
+.card3:hover .overlay{
+  opacity: 1;
+}
+
+ /**** Animation property for Project****/
+.middle {
+  height: 66%;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  margin-top: -30px;
+ 
+  
+}
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.tt {
+
+  color:rgb(180, 187, 190); 
+  font-size: 40px;
+  position: absolute;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align:center;
+  
+
+}
+.card1:hover .middle{
+  opacity: 1;
+}
+.card1:hover .image {
+  opacity: 0.3;
+}
+
+.card2:hover .middle{
+  opacity: 1;
+}
+.card2:hover .image {
+  opacity: 0.3;
+}
+
+.card3:hover .middle{
+  opacity: 1;
+}
+.card3:hover .image {
+  opacity: 0.3;
+}
+ /**** Area for Heading in each page****/
+.div1{
+  margin-top: 70px;
+  margin-left: 100px;
+  text-align: center;
+  font-size: 20px;
+  color:rgb(180, 187, 190);
+}
+ /**** Area for describe about the page****/
+.div2{
+  margin-top: 45px;
+  margin-bottom: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color:rgb(180, 187, 190); 
+}
+.div3{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color:rgb(180, 187, 190); 
+
+}
+.div4{
+  font-size: 18px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  color:rgb(180, 187, 190);
+  font-family: 'Times New Roman', Times, serif; 
+}
+.content{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+ /**** Contact page styling ****/
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgb(12, 7, 7);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: black;
+  color:rgb(180, 187, 190);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color:rgb(180, 187, 190); 
+  color: black;
+}
+
+.contr {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+
+/* Create two equal columns that floats next to each other for contact page */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 20px;
+  height: 540px; 
+}
+.column1{
+ 
+  color:rgb(180, 187, 190); 
+  font-size: 25px;
+}
+
+.column2{
+ 
+  background-image:linear-gradient(black .5%,seagreen,black);
+  color: rgb(180, 187, 190);
+  
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/*********** Animate Cards ***********************/
+  @media screen and (max-width: 600px) {
+    
+    
+  }
+  
+  @media screen and (max-width: 600px) {
+  
+  
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+  }
+
+
+
+/* Slideshow container for index page  */
+
+
+
+/* Animation */
+.fade
+{
+  animation: fade-image 2s ease-out;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes fade-image
+{
+  
+    0% {
+      opacity: .2;
+    }
+    25%{
+      opacity:.4;
+    }
+    50% {
+      opacity: .6
+       }
+    75%{
+      opacity: .8;
+      }
+    100%{
+        opacity:1;
+      }
+    
+}
+
+@keyframes fade-image
+{
+0% {
+  opacity: .2
+}
+25%{
+  opacity:.4;
+}
+50% {
+  opacity: .6
+   }
+75%{
+  opacity: .8;
+  }
+100%{
+    opacity:1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(100px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* On smaller screens, decrease text size */
+
+
+footer{
+    background-color:black;
+    color:white;
+    height: 70px;
+    padding: 50px;
+}
+.footer {
+    float: right;
+    padding-left: 30px;
+    color:white;
+
+}
+.footer :hover
+{
+    color:seagreen;
+    transition: .2s;
+    transform: scale(1.8);
+}
